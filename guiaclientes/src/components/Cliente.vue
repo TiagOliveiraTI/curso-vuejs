@@ -6,7 +6,7 @@
     }"
   >
     <h4>Nome: {{ cliente.nome }}</h4>
-    <p>{{ cliente.email }}</p>
+    <p>{{ cliente.email | processarEmail}}</p>
     <p v-if="cliente.showAge === true">{{ cliente.idade }}</p>
     <p v-else>Esse usuário optou por esconder a idade</p>
     <button @click="mudarCor($event)">Muda cor</button>
@@ -34,6 +34,11 @@ export default {
       testar: function() {
         console.log("Testando um metodo de filho passado para pai")
       }
+  },
+  filters: {
+    processarEmail: function(value) {
+      return value.toUpperCase()
+    }
   }
 };
 </script>
