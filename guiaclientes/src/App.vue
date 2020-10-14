@@ -29,7 +29,8 @@ export default {
       clienteArielle: {
         nome: 'Arielle P C Silva',
         idade: 29,
-        email: 'arielle.carmo@gmail.com'
+        email: 'arielle.carmo@gmail.com',
+        isPremium: true
       }
     }
   }
