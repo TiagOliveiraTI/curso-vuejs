@@ -1,42 +1,65 @@
 <template>
   <div id="app">
     <h1>Guia de Clientes</h1>
-    <Cliente :cliente="clienteTiago" :showAge="true"/>
-    <Cliente :cliente="clienteArielle" :showAge="false"/>
-    <!-- <Cliente nome="Iris Oliveira" email="irisocsilva@gmail.com" idade="10"/>
-    <Cliente nome="Arthur Oliveira" email="arthuroliveiracsilva@gmail.com" idade="8"/>
-    <Cliente nome="Henri Oliveira" email="henriocsilva@gmail.com" idade="3"/> -->
+    <div v-for="cliente in clientes" :key="cliente.id">
+      <Cliente :cliente="cliente" />
+    </div>
   </div>
 </template>
 
 <script>
-
-import Cliente from './components/Cliente';
-
+import Cliente from "./components/Cliente";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Cliente
+    Cliente,
   },
-  data(){
+  data() {
     return {
-      clienteTiago: {
-        nome: 'Tiago Oliveira',
-        idade: 32,
-        email: 'dev.tiago.oliveira@gmail.com'
-      },
-      clienteArielle: {
-        nome: 'Arielle P C Silva',
-        idade: 29,
-        email: 'arielle.carmo@gmail.com',
-        isPremium: true
-      }
-    }
-  }
-}
+      clientes: [
+        {
+          id: 1,
+          nome: "Tiago Oliveira",
+          idade: 32,
+          showAge: false,
+          email: "dev.tiago.oliveira@gmail.com",
+        },
+        {
+          id: 2,
+          nome: "Arielle P C Silva",
+          idade: 29,
+          showAge: false,
+          email: "arielle.carmo@gmail.com",
+          isPremium: true,
+        },
+        {
+          id: 3,
+          nome: "Iris de Oliveira",
+          idade: 10,
+          showAge: true,
+          email: "irisocsilva@gmail.com",
+        },
+        {
+          id: 4,
+          nome: "Arthur de Oliveira",
+          idade: 8,
+          showAge: true,
+          email: "irisocsilva@gmail.com",
+        },
+        {
+          id: 5,
+          nome: "Henri de Oliveira",
+          idade: 3,
+          showAge: true,
+          email: "irisocsilva@gmail.com",
+          isPremium: true,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
