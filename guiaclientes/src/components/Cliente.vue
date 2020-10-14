@@ -24,7 +24,6 @@ export default {
   },
   methods: {
       mudarCor: function($event) {
-        console.log($event)
         this.cliente.isPremium = !this.cliente.isPremium; 
       }
   }
