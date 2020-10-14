@@ -1,12 +1,11 @@
 <template>
   <div id="app">
     <h1>Guia de Clientes</h1>
-    <input type="text" v-model="nomeDoTiago">
-    <Cliente :nome="nomeDoTiago" email="dev.tiago.oliveira@gmail.com" idade="32"/>
-    <Cliente :cliente="clienteArielle"/>
-    <Cliente nome="Iris Oliveira" email="irisocsilva@gmail.com" idade="10"/>
+    <Cliente :cliente="clienteTiago" :showAge="true"/>
+    <Cliente :cliente="clienteArielle" :showAge="false"/>
+    <!-- <Cliente nome="Iris Oliveira" email="irisocsilva@gmail.com" idade="10"/>
     <Cliente nome="Arthur Oliveira" email="arthuroliveiracsilva@gmail.com" idade="8"/>
-    <Cliente nome="Henri Oliveira" email="henriocsilva@gmail.com" idade="3"/>
+    <Cliente nome="Henri Oliveira" email="henriocsilva@gmail.com" idade="3"/> -->
   </div>
 </template>
 
@@ -22,7 +21,11 @@ export default {
   },
   data(){
     return {
-      nomeDoTiago: 'Tiago Aparecido de Oliveira',
+      clienteTiago: {
+        nome: 'Tiago Oliveira',
+        idade: 32,
+        email: 'dev.tiago.oliveira@gmail.com'
+      },
       clienteArielle: {
         nome: 'Arielle P C Silva',
         idade: 29,
