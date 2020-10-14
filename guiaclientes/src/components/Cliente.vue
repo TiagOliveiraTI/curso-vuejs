@@ -1,8 +1,8 @@
 <template>
     <div id="div-cliente">
-        <input type="text" :value="nome">
+        <input type="text" v-model="nome">
         <hr>
-        <input type="text" :value="descricao">
+        <input type="text" v-model="descricao">
         <h2>Olá {{nome}}!</h2>
         <p>Descrição: {{descricao}}</p>
 
