@@ -1,18 +1,25 @@
 <template>
     <div id="div-cliente">
-        <h2>Cliente aqui!</h2>
-        <p>Gerado por componente</p>
+        <h2>Olá {{nome}}!</h2>
+        <p>Descrição: {{descricao}}</p>
+
     </div>
 </template>
 
 <script>
 export default {
-    
+    data() {
+        return {
+            nome: "Tiago ",
+            numero: "",
+            email: "",
+            idade: 0,
+            descricao: "lorem ipsum dolor sit amet, consectetur adipiscing",
+        }
+    }
 }
 </script>
 
 <style scoped>
-    #div-cliente {
-        color: aquamarine;
-    }
+
 </style>
