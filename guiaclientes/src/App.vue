@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <h3>Cadastro:</h3>
+    <input type="text" name=""  id="" placeholder="Nome Completo" v-model="nomeField"><br>
+    <input type="email" name=""  id="" placeholder="E-mail" v-model="emailField"><br>
+    <input type="number" name="" id="" placeholder="idade" v-model="idadeField"><br>
+    <button @click="cadastrarUsuario">Cadastrar</button>
+    <hr>
     <h1>Guia de Clientes</h1>
     <div v-for="cliente in clientes" :key="cliente.id">
       <Cliente :cliente="cliente" />
@@ -15,8 +21,26 @@ export default {
   components: {
     Cliente,
   },
+  methods: {
+    cadastrarUsuario: function() {
+      this.clientes.push({
+        nome: this.nomeField,
+        email: this.emailField,
+        idade: this.idadeField,
+        id: Date.now()
+      })
+
+      this.nomeField = '';
+      this.emailField = '';
+      this.idadeField = 0;
+
+    }
+  },
   data() {
     return {
+      nomeField : '',
+      emailField : '',
+      idadeField : 0,
       clientes: [
         {
           id: 1,
