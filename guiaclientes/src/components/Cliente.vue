@@ -10,6 +10,7 @@
     <p v-if="cliente.showAge === true">{{ cliente.idade }}</p>
     <p v-else>Esse usuário optou por esconder a idade</p>
     <button @click="mudarCor($event)">Muda cor</button>
+    <button @click="emitirEventoDelete()">Excluir</button>
   </div>
 </template>
 
@@ -23,8 +24,15 @@ export default {
     showAge: Boolean,
   },
   methods: {
-      mudarCor: function($event) {
+      mudarCor: function() {
         this.cliente.isPremium = !this.cliente.isPremium; 
+      },
+      emitirEventoDelete: function() {
+        console.log("emitirEventoDelete do filho")
+        this.$emit("meDeletaPapai", {idDoCliente: this.cliente.id, 'teste': 'Testando passar qualquer coisa', component: this})
+      },
+      testar: function() {
+        console.log("Testando um metodo de filho passado para pai")
       }
   }
 };

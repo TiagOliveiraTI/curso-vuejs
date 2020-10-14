@@ -9,7 +9,7 @@
     <hr>
     <h1>Guia de Clientes</h1>
     <div v-for="cliente in clientes" :key="cliente.id">
-      <Cliente :cliente="cliente" />
+      <Cliente :cliente="cliente" @meDeletaPapai="deletarUsuario($event)"/>
     </div>
   </div>
 </template>
@@ -38,7 +38,11 @@ export default {
         this.idadeField = 0;
         this.deuErro = false;
       }
-
+    },
+    deletarUsuario: function ($event) {
+      let id = $event.idDoCliente;
+      let novoArray = this.clientes.filter(cliente => cliente.id != id)
+      this.clientes = novoArray;
     }
   },
   data() {
