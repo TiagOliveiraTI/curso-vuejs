@@ -1,14 +1,15 @@
 <template>
   <div
     :class="{
-      'div-cliente': !cliente.isPremium,
       'div-cliente-premium': cliente.isPremium,
+      'div-cliente': !cliente.isPremium,
     }"
   >
     <h4>Nome: {{ cliente.nome }}</h4>
     <p>{{ cliente.email }}</p>
     <p v-if="cliente.showAge === true">{{ cliente.idade }}</p>
     <p v-else>Esse usuário optou por esconder a idade</p>
+    <button @click="mudarCor($event)">Muda cor</button>
   </div>
 </template>
 
@@ -21,6 +22,12 @@ export default {
     cliente: Object,
     showAge: Boolean,
   },
+  methods: {
+      mudarCor: function($event) {
+        console.log($event)
+        this.cliente.isPremium = !this.cliente.isPremium; 
+      }
+  }
 };
 </script>
 

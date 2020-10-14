@@ -24,6 +24,7 @@ export default {
           idade: 32,
           showAge: false,
           email: "dev.tiago.oliveira@gmail.com",
+          isPremium: false,
         },
         {
           id: 2,
@@ -39,6 +40,7 @@ export default {
           idade: 10,
           showAge: true,
           email: "irisocsilva@gmail.com",
+          isPremium: false,
         },
         {
           id: 4,
@@ -46,6 +48,7 @@ export default {
           idade: 8,
           showAge: true,
           email: "irisocsilva@gmail.com",
+          isPremium: true,
         },
         {
           id: 5,
